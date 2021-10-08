@@ -1,0 +1,19 @@
+extends ../layout.pug
+
+block title 
+    | Posts Page 
+
+block page_title 
+    | List of Posts 
+
+block content 
+    table 
+        tr 
+            th no.
+            th Title
+            th Last Updated 
+        each post, index in posts
+            tr 
+                td #{index}
+                td #{post.title}
+                td #{post.lastUpdated}

@@ -9,8 +9,7 @@ router.get('/', (req, res) => res.render('index.pug'));
 router.get('/posts', async (req, res) => {
     try {
         const posts = await PostDAO.getList();
-        console.log(posts);
-        return res.send('Loaded Posts');
+        return res.render('posts/index.pug', { posts });
     } catch (e) {
         console.error(`Error handling GET /posts: ${e}`);
     }
